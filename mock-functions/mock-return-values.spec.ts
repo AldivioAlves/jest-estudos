@@ -1,26 +1,22 @@
-// inpecionando os valores, retornos e instancias das funções 
+const myMock = jest.fn()
 
-const myMock1:any = jest.fn()
+console.log(myMock())
+//Injetando valores na função durante o teste
+myMock.mockReturnValueOnce(10).mockReturnValueOnce('x').mockReturnValue(true)
+console.log(myMock(),myMock(),myMock(),myMock())
 
-const a = new myMock1();
 
-const myMock2:any = jest.fn();
+const filterTestFn = jest.fn()
+// A função nessa execução retorna true e false 
+filterTestFn.mockReturnValueOnce(true).mockReturnValueOnce(false)
 
-const b = {}
+// a função retorna o  ultimo valor do método filter
+const result = [11,12].filter(num=>filterTestFn(num))
+console.log(result)
 
-const bound = myMock2.bind(b)
-bound()
-
+// Analisando as duas chamadas da função (2x visto que no array tinha dois elementos (filter é uma função de iteração))
+// Foi sobrescrito os retornos da chamada a função filterTestFn visto que os logs não estão retornando os testes true e false; 
+console.log(filterTestFn.mock.calls[0][0])
+console.log(filterTestFn.mock.calls[1][0])
 test('',()=>{
-    console.log(myMock2.mock.contexts); // retornando a instancia de myMock2
 })
-
-test('expect mock1 called twice',()=>{
-    myMock1()
-expect(myMock1.mock.calls.length).toBe(2)
-})
-
-test('',()=>{
-    expect(myMock1.mock.contexts[0]).toBe(a)
-})
-
