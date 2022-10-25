@@ -7,7 +7,7 @@
     "jest": "^29.2.1"
   },
   "scripts": {
-    "test": "jest --watchAll --testPathPattern=setup-and-teardown"
+    "test": "jest --watchAll --testPathPattern=mock-functions"
   },
   "dependencies": {
     "@types/jest": "^29.2.0"
