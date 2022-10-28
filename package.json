@@ -12,6 +12,8 @@
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.2.0",
-    "axios": "^1.1.3"
+    "axios": "^1.1.3",
+    "jest-diff": "^29.2.1",
+    "jest-docblock": "^29.2.0"
   }
 }
