@@ -10,6 +10,8 @@
     "test": "jest --watchAll --testPathPattern=mock-functions"
   },
   "dependencies": {
-    "@types/jest": "^29.2.0"
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^29.2.0",
+    "axios": "^1.1.3"
   }
 }
